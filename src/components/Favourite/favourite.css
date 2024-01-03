@@ -1,0 +1,33 @@
+.header__link {
+    position: absolute;
+    top: -36px;
+    right: 0;
+}
+.header__link_favourite {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+}
+.header__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.video__link {
+    width: max-content;
+    white-space: nowrap;
+    display: flex;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+@media (width <= 768px) {
+    .hero__link-text {
+        position: fixed;
+        transform: scale(0);
+    }
+    
+}

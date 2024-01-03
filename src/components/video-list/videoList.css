@@ -1,0 +1,11 @@
+.video-list__arrows {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+.video-list__arrows > img {
+    width: 50px;
+    cursor: pointer;
+}
