@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Favourite } from "../Favourite/favourite";
 import logoW from '../main/img/logo_w.svg';
 
 import './footer.css';

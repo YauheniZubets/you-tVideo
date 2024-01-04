@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Favourite } from "../Favourite/favourite";
@@ -13,7 +13,7 @@ export const Videoframe = () => {
 
     const {id} = useParams();
 
-    const fetchVideoData = async (id) => {
+    const fetchVideoData = useCallback( async (id) => {
         if (data) setVideo(null);
         const toServerId = id.substr(1, id.length-1);
         try {
@@ -29,7 +29,7 @@ export const Videoframe = () => {
             return response;
             
         } catch (error) {console.log('error: ', error);}
-    };
+    }, [data]);
 
     const formatDate = (isoString) => {
         const date = new Date(isoString);
@@ -56,7 +56,7 @@ export const Videoframe = () => {
                         <iframe className="video__iframe" allowFullScreen 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                             gyroscope; picture-in-picture; web-share" 
-                        src={`https://www.youtube.com/embed/${data.items[0].id}`}></iframe>
+                        src={`https://www.youtube.com/embed/${data.items[0].id}`} title="видео"></iframe>
                     </div>
                     <div className="video__container">
                         <div className="video__content">
