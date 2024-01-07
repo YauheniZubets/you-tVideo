@@ -14,7 +14,7 @@ export const Pages = () => {
 
     return (
         <Routes>
-            <Route path="/aa" exact element={<App />}/>
+            <Route path="/you-tVideo" exact element={<App />}/>
             <Route path="/search?"  element={<App />}/>
             <Route path="/favourite" element={<Fav />}/>
             <Route path="/video/:id" element={<Video />}/>
