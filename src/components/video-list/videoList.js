@@ -12,7 +12,6 @@ import './videoList.css';
 export const VideoList = (props) => {
 
     const {toSearch} = props;
-
     const [list, setList] = useState('');
     const [nextPage, setNextPage] = useState(null);
     const [prewPage, setPrewPage] = useState(null);
