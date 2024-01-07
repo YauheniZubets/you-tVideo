@@ -5,12 +5,12 @@ import { Video } from "../video/video";
 import { useEffect } from "react";
 
 export const Pages = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
+    // const location = useLocation();
+    // const navigate = useNavigate();
 
-    useEffect(()=> {
-        if (location.pathname === '/you-tVideo') navigate('/');
-    }, [location.pathname, navigate]);
+    // useEffect(()=> {
+    //     if (location.pathname === '/you-tVideo') navigate('/');
+    // }, [location.pathname, navigate]);
 
     return (
         <Routes>
