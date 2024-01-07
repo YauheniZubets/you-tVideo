@@ -1,9 +1,17 @@
-import { Routes, Route } from "react-router-dom"
-import { App } from "../../App"
-import { Fav } from "../fav/fav"
-import { Video } from "../video/video"
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { App } from "../../App";
+import { Fav } from "../fav/fav";
+import { Video } from "../video/video";
+import { useEffect } from "react";
 
 export const Pages = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(()=> {
+        if (location.pathname === '/you-tVideo') navigate('/');
+    }, [location.pathname, navigate]);
+
     return (
         <Routes>
             <Route path="/" exact element={<App />}/>

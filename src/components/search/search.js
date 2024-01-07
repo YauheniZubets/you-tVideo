@@ -27,7 +27,7 @@ export const Search = (props) => {
 
     useEffect(() => {
         if (location.pathname !== '/search') setInpVal('');
-    }, [location])
+    }, [location]);
 
     return (
         <section className="search">

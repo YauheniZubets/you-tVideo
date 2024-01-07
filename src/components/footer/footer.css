@@ -60,7 +60,7 @@
     .footer__container {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
     }
     .footer__link_logo {
         max-width: 180px;

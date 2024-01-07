@@ -13,9 +13,8 @@ export const Videoframe = () => {
 
     const {id} = useParams();
 
-    const fetchVideoData = useCallback( async (id) => {
-        if (data) setVideo(null);
-        const toServerId = id.substr(1, id.length-1);
+    const fetchVideoData = useCallback( async (ident) => {
+        const toServerId = ident.substr(1, id.length-1);
         try {
             const url = new URL(VIDEOS_URL);
             url.searchParams.append('part', 'snippet, statistics');
@@ -29,7 +28,7 @@ export const Videoframe = () => {
             return response;
             
         } catch (error) {console.log('error: ', error);}
-    }, [data]);
+    }, [id.length]);
 
     const formatDate = (isoString) => {
         const date = new Date(isoString);
@@ -45,7 +44,7 @@ export const Videoframe = () => {
 
     useEffect(() => {
         fetchVideoData(id).then(video => displayVideo(video));
-    }, [id]);
+    }, [fetchVideoData, id]);
 
     return (
         <section className="video">

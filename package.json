@@ -2,7 +2,7 @@
   "name": "you-tvideo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yauhenizubets.github.io/you-tVideo/",
+  "homepage": "https://yauhenizubets.github.io/you-tVideo",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

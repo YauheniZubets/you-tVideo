@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation, useParams } from "react-router-dom";
 
@@ -26,7 +26,7 @@ export const VideoList = (props) => {
     const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
     const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
-    const fetchTrendingVideos = async () => {
+    const fetchTrendingVideos = useCallback( async () => {
         if (list.length) setList([]);
         try {
             const url = new URL(VIDEOS_URL);
@@ -41,7 +41,7 @@ export const VideoList = (props) => {
             }
             return response;
         } catch (error) {console.log('error: ', error);}
-    };
+    }, [list.length]);
 
     const fetchFavouriteVideos = async () => {
         if (list.length) setList([]);
@@ -127,18 +127,17 @@ export const VideoList = (props) => {
             case '/favourite':
                 fetchFavouriteVideos().then(videos => displayListVideo(videos));
                 break;
-            case '/search':
-                fetchToSearch(toSearch);
-                break;
             default: 
                 fetchTrendingVideos().then(videos => displayListVideo(videos));
                 break;
         }
-    }, [location]);
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.pathname]);
+    
     useEffect(() => {
         if (location.search) fetchToSearch(toSearch);
-    }, [toSearch]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.search]);
 
     const convertTime = (ISOTime) => {
         const hoursMatch = ISOTime.match(/(\d+)H/);
