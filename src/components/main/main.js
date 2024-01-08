@@ -21,7 +21,7 @@ export const Main = (props) => {
     return (
         <main>
             { hero && <Hero /> }
-            { location.pathname !== '/favourite' && <Search toSearch = {fToSearch} />}
+            { location.pathname !== '/you-tVideo/favourite' && <Search toSearch = {fToSearch} />}
             {
                 iFrame && <Videoframe />
             }

@@ -49,7 +49,7 @@ export const Favourite = (props) => {
                     </div>
                 </button>
                 : 
-                <Link to='/favourite' className='header__link header__link_favourite'>
+                <Link to='/you-tVideo/favourite' className='header__link header__link_favourite'>
                     {favWord && <span className='hero__link-text'>Избранное</span>}
                     <div className='header__icon'>
                         {noColor && <img src={favourite_normal} alt='fav_o'/>}

@@ -8,7 +8,7 @@ export const Hero = (props) => {
         <section className="hero">
             <div className="container ">
                 <div className="hero__container">
-                    <Link to='/' className='hero__link'>
+                    <Link to='/you-tVideo' className='hero__link'>
                         <img src={logo_w} alt='white-logo'/>
                     </Link>
                     <Favourite favWord={true} white={true} />

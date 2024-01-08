@@ -92,7 +92,7 @@ export const VideoList = (props) => {
                 return (
                     <li className='video-list__item' key={video.id.videoId || video.id}>
                         <article className="video-card">
-                            <Link to={`/video/:${video.id.videoId || video.id}`}>
+                            <Link to={`/you-tVideo/video/:${video.id.videoId || video.id}`}>
                                 <img className="video-card__thumbnail" src={
                                     video.snippet.thumbnails.standart?.url || video.snippet.thumbnails.high?.url
                                     } alt={`${video.snippet.title}`}/>
@@ -123,7 +123,7 @@ export const VideoList = (props) => {
 
     useEffect(() => {
         switch (location.pathname) {
-            case '/favourite':
+            case '/you-tVideo/favourite':
                 fetchFavouriteVideos().then(videos => displayListVideo(videos));
                 break;
             default: 

@@ -8,7 +8,7 @@ export const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer__container">
-                <Link to='/' className='footer__link footer__link_logo'>
+                <Link to='/you-tVideo' className='footer__link footer__link_logo'>
                     <img src={logoW} alt='white-logo'/>
                 </Link>
                 <ul className="footer__developers">

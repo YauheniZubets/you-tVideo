@@ -21,12 +21,12 @@ export const Search = (props) => {
         const value = inpVal.trim();
         if (inpVal) {
             toSearch(value);
-            navigate(`/search?q=${value}`);
+            navigate(`/you-tVideo/search?q=${value}`);
         }
     }
 
     useEffect(() => {
-        if (location.pathname !== '/search') setInpVal('');
+        if (location.pathname !== '/you-tVideo/search') setInpVal('');
     }, [location]);
 
     return (

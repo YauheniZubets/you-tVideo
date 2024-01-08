@@ -13,7 +13,7 @@ export const Header = (props) => {
     return (
         <header className='header'>
             <div className='container header__container'>
-                <Link to='/' className='header__logo'>
+                <Link to='/you-tVideo' className='header__logo'>
                     {orange && <img src={logoOr} alt='orange-logo' className='header__logo'/> }
                     {white && <img src={logoWh} alt='white-logo' className='header__logo'/>}
                 </Link>
